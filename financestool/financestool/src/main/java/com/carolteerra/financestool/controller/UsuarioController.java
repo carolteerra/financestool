@@ -11,10 +11,10 @@ import com.carolteerra.financestool.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -54,7 +54,7 @@ public class UsuarioController {
 
     }
 
-/*    @GetMapping("{id}/saldo")
+    @GetMapping("{id}/saldo")
     public ResponseEntity obterSaldo( @PathVariable("id") Long id ) {
         Optional<Usuario> usuario = service.obterPorId(id);
 
@@ -64,6 +64,6 @@ public class UsuarioController {
 
         BigDecimal saldo = lancamentoService.obterSaldoPorUsuario(id);
         return ResponseEntity.ok(saldo);
-    }*/
+    }
 
 }
